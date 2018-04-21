@@ -3,6 +3,8 @@ import numpy as np
 from sklearn.model_selection import GridSearchCV
 from sklearn.neighbors import KernelDensity
 
+
+# too slow
 def kde_bandwidth(x):
     grid = GridSearchCV(KernelDensity(), {'bandwidth': np.linspace(0.1, 1.0, 30)}, cv = 10)
     grid.fit(x[:, None])
@@ -18,6 +20,5 @@ def kde_estimation(x):
 
 
 def set_outlier_threshold(pc_norm, p_rate, trials):
-
 
     return 0.0
