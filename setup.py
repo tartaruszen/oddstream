@@ -9,7 +9,8 @@ setup(name = 'oddstream',
       author_email = 'sm@anofox.com',
       licence = 'MIT',
       install_requires = ['scikit-learn',
-                          'numpy'],
+                          'numpy',
+                          'fastkde'],
       zip_safe = False,
       packages=find_packages())
  

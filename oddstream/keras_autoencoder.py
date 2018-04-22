@@ -1,4 +1,3 @@
-import tensorflow as tf
 import keras
 from keras.callbacks import History, TerminateOnNaN, ReduceLROnPlateau, EarlyStopping
 

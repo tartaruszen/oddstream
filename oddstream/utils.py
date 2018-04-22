@@ -2,15 +2,15 @@ import numpy as np
 from scipy.stats.distributions import norm
 
 """
-Simulate from a Multivariate Normal Distribution
+    Simulate from a Multivariate Normal Distribution
 
-Produces one or more samples from the specified multivariate normal distribution.
+    Produces one or more samples from the specified multivariate normal distribution.
 
-B. D. Ripley (1987) Stochastic Simulation. Wiley. Page 98.
+    B. D. Ripley (1987) Stochastic Simulation. Wiley. Page 98.
 
-Borrowed from R: mvrnorm {MASS}
+    Borrowed from R: mvrnorm {MASS}
 
-TODO: numba
+    TODO: numba
 """
 def mvrnorm(n, mu, Sigma, tol = 1e-6):
     p = len(mu)
