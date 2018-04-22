@@ -1,7 +1,7 @@
 from setuptools import setup
 from setuptools import find_packages
 
-setup(name = 'oddstream', 
+setup(name = 'oddstream',
       version = '0.1',
       description = 'Fill this',
       url = 'http://github.com/anofox/oddstream',
@@ -10,7 +10,8 @@ setup(name = 'oddstream',
       licence = 'MIT',
       install_requires = ['scikit-learn',
                           'numpy',
-                          'fastkde'],
+                          'fastkde',
+                          'keras'],
       zip_safe = False,
       packages=find_packages())
  

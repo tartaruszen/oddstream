@@ -1,7 +1,7 @@
 from fastkde import fastKDE
 
 """
- Fast 2D Kernel Density Estimation with point evaluation
+    Fast 2D Kernel Density Estimation with point evaluation
 """
 class KDEEstimation2D(object):
     def __init__(self, X):

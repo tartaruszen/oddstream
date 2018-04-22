@@ -1,9 +1,15 @@
 Outlier Detection in Data STREAMs (oddstream)
 ================
 
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/anofox/oddstream/blob/master/LICENSE)
+[![Project Status: WIP  Initial development is in progress, but there
+has not yet been a stable, usable release suitable for the
+public.](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)[![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/anofox/oddstream/blob/master/LICENSE)
 
-A Python implementation of [oddstream](https://github.com/pridiltal/oddstream)
+----
+[![Last-changedate](https://img.shields.io/badge/last%20change-2018--04--23-yellowgreen.svg)](/commits/master)[![packageversion](https://img.shields.io/badge/Package%20version-0.1-orange.svg?style=flat-square)](commits/master)
+
+
+This is a Python reimplementation of the R package [oddstream](https://github.com/pridiltal/oddstream).
 
 ## References
 

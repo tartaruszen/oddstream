@@ -27,4 +27,4 @@ def set_outlier_threshold(pc_norm, p_rate, trials):
     dm = 1 / (np.sqrt(2 * np.log(m)))
     t = cm + y * dm
     threshold_fnx = np.exp(-1 * ((t**2) + 2 * np.log(2 * math.pi)) / 2)
-    return {'threshold_fnx': threshold_fnx, 'fhat': fhat}
+    return {'threshold_fnx': threshold_fnx, 'fhat': fhat, 'Sigma': sigma}
