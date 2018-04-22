@@ -9,7 +9,7 @@ public.](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus
 [![Last-changedate](https://img.shields.io/badge/last%20change-2018--04--23-yellowgreen.svg)](/commits/master)[![packageversion](https://img.shields.io/badge/Package%20version-0.1-orange.svg?style=flat-square)](commits/master)
 
 
-This is a Python reimplementation of the R package [oddstream](https://github.com/pridiltal/oddstream).
+This is a modified Python reimplementation of the R package [oddstream](https://github.com/pridiltal/oddstream). This implementation uses an LSTM Auto Encoder for feature extraction, instead of handcrafted features. Handcrafted time series feature extraction will be added in a near future.
 
 ## References
 
