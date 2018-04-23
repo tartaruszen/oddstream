@@ -2,7 +2,7 @@ import keras
 from keras.callbacks import History, TerminateOnNaN, ReduceLROnPlateau, EarlyStopping
 
 class KerasAutoEncoder():
-    def __init__(self, config, callbacks =[], useCUDNN = False):
+    def __init__(self, config, callbacks = [], useCUDNN = False):
         self.nIn = config['nIn']
         self.dropout_rate = config['dropout_rate']
         self.epochs = config['epochs']
@@ -66,14 +66,12 @@ class KerasAutoEncoder():
                                                          return_sequences=True,
                                                          stateful=False,
                                                          kernel_initializer='glorot_uniform')(encoder_input)
-        encoder = keras.layers.Dropout(self.dropout_rate)(encoder)
         encoder = keras.layers.cudnn_recurrent.CuDNNLSTM(units=64,
                                                          batch_input_shape=(1, None, self.nIn),
                                                          return_sequences=True,
                                                          stateful=False,
                                                          return_state=True,
                                                          kernel_initializer='glorot_uniform')(encoder)
-        encoder = keras.layers.Dropout(self.dropout_rate)(encoder)
         encoder = keras.layers.cudnn_recurrent.CuDNNLSTM(units=32,
                                                          batch_input_shape=(1, None, self.nIn),
                                                          return_sequences=True,
@@ -86,13 +84,11 @@ class KerasAutoEncoder():
                                                          stateful=False,
                                                          return_state=False,
                                                          kernel_initializer='glorot_uniform')(encoder)
-        decoder = keras.layers.Dropout(self.dropout_rate)(decoder)
         decoder = keras.layers.cudnn_recurrent.CuDNNLSTM(units=64,
                                                          return_sequences=True,
                                                          stateful=False,
                                                          return_state=False,
                                                          kernel_initializer='glorot_uniform')(decoder)
-        decoder = keras.layers.Dropout(self.dropout_rate)(decoder)
         decoder = keras.layers.cudnn_recurrent.CuDNNLSTM(units=128,
                                                          return_sequences=False,
                                                          stateful=False,

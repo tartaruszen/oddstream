@@ -8,12 +8,12 @@ from sklearn.preprocessing import scale
     Detecting outliers in a collection of streaming time series.
 """
 class OddStreams():
-    def __init__(self, max_iterations, trials, config, concept_drift = False):
+    def __init__(self, max_iterations, trials, config, concept_drift = False, callbacks = [], useCUDNN = False):
         self.max_iterations = max_iterations
         self.trials = trials
         self.concept_drift = concept_drift
         self.pca = PCA(n_components=2)
-        self.autoencoder = KerasAutoEncoder(config)
+        self.autoencoder = KerasAutoEncoder(config = config, callbacks = callbacks, useCUDNN = useCUDNN)
 
 
     def train(self, X):

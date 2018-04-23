@@ -11,7 +11,7 @@ def set_outlier_threshold(pc_norm, p_rate, trials):
     d = pc_norm.shape[1]
 
     # TODO: in R bandwidth estimation is used
-    Sigma = np.cov(pc_norm.T) / 5
+    Sigma = np.cov(pc_norm.T)
     f_extreme = np.array([0 for _ in range(0, m)], dtype = float)
     r_sample = np.array([[0.0 for i in range(d)] for j in range(m)], dtype=float)
     for t in range(0, trials):
