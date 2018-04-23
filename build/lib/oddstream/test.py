@@ -14,8 +14,6 @@ v = np.array([var1, var2]).T
 pca = PCA(n_components=2)
 pca.fit(v)
 pc_norm = pca.transform(v)
-set_outlier_threshold(pc_norm, 0.5, 100)
-
 fastKDE.pdf_at_points(pc_norm[1:10, 0], pc_norm[1:10, 1])
 kde = KDEEstimation2D(pc_norm.T)
 kde.evaluate_points(pc_norm.T)

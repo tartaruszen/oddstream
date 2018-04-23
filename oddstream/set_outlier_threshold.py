@@ -6,7 +6,7 @@ from oddstream.utils import mvrnorm
 
 
 def set_outlier_threshold(pc_norm, p_rate, trials):
-    fhat = KDEEstimation2D(pc_norm)
+    fhat = KDEEstimation2D(pc_norm.T)
     m = pc_norm.shape[0]
 
     f_extreme = [0 for _ in range(0, m)]

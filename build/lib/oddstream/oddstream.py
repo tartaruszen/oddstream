@@ -33,8 +33,3 @@ class OddStreams():
         window_fhat = self.kde_object['fhat'].evaluate_points(pc_window)
         outliers = [i for i in range(0, len(window_fhat)) if window_fhat[i] < self.kde_object['threshold_fnx']]
         return outliers
-
-
-    def pca_features(self, X):
-        pca = PCA(n_components=2)
-        return pca.fit_transform(X)
