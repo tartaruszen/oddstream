@@ -17,15 +17,12 @@ This is a modified Python reimplementation of the R package [oddstream](https://
 ## Installation
 
 ```
-python setpup.py install
+python setup.py install
 ```
 
 ## Usage
 
-```
-
-```
-
+See example notebook.
 
 
 ## References
