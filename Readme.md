@@ -14,6 +14,20 @@ public.](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus
 
 This is a modified Python reimplementation of the R package [oddstream](https://github.com/pridiltal/oddstream). This implementation uses an LSTM Auto Encoder for feature extraction, instead of handcrafted features. Handcrafted time series feature extraction will be added in a near future.
 
+## Installation
+
+```
+python setpup.py install
+```
+
+## Usage
+
+```
+
+```
+
+
+
 ## References
 
   - Talagala, P. D., Hyndman, R. J., Smith-Miles, K., Kandanaarachchi,
