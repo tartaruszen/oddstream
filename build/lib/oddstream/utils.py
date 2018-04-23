@@ -20,5 +20,5 @@ def mvrnorm(n, mu, Sigma, tol = 1e-6):
     X = np.array(norm.rvs(size = n * p)).reshape(n, p)
     eigValues[eigValues < 0] = 0
     eigValues = np.sqrt(eigValues)
-    X = mu + np.dot(np.dot(eigVectors, np.diag(eigValues)), X.T).T
-    return X
+    X = mu + np.dot(np.dot(eigVectors, np.diag(eigValues)), X.T)
+    return X.T

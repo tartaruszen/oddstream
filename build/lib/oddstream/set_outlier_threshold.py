@@ -13,8 +13,8 @@ def set_outlier_threshold(pc_norm, p_rate, trials):
     for t in range(0, trials):
         sample = np.random.choice(range(0, m), m, replace=True)
         # TODO: not nice, but should work
-        Sigma = np.cov(pc_norm.T)
-        f_extreme[t] = np.min([fhat.evaluate_points(mvrnorm(n=1, mu=pc_norm[s, :], Sigma=Sigma)) for s in sample])
+        sigma = np.cov(pc_norm)
+        f_extreme[t] = np.min([fhat.evaluate_points(mvrnorm(n=1, mu=pc_norm[s, :], Sigma=sigma)) for s in sample])
 
     k = 1 / (2 * math.pi)
     # TODO: why np.sqrt(-2 * np.log(f_val) - 2 * np.log(2 * math.pi))?
