@@ -15,7 +15,6 @@ class OddStreams():
         self.pca = PCA(n_components=2)
         self.autoencoder = KerasAutoEncoder(config = config, callbacks = callbacks, useCUDNN = useCUDNN)
 
-
     def train(self, X):
         self.autoencoder.train(X)
         train_features = self.autoencoder.extract_features(X)
@@ -24,10 +23,8 @@ class OddStreams():
         pc_norm = self.pca.transform(train_features)
         self.kde_object = set_outlier_threshold(pc_norm, trials=self.trials)
 
-
     def predict(self, X):
         window_features = self.autoencoder.extract_features(X)
-        # TODO post-process window_features
         window_features = scale(window_features, axis=1)
         pc_window = self.pca.transform(window_features)
         window_fhat = self.kde_object['fhat'].evaluate_points(pc_window)

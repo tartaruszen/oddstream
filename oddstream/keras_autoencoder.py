@@ -1,4 +1,5 @@
 import keras
+import numpy as np
 from keras.callbacks import History, TerminateOnNaN, ReduceLROnPlateau, EarlyStopping
 
 class KerasAutoEncoder():
@@ -95,14 +96,17 @@ class KerasAutoEncoder():
 
     def train(self, X_train):
         self.ae_model.fit(x=X_train,
-                          y=X_train,
+                          y=X_train.reshape(X_train.shape[0], self.nIn),
                           epochs=self.epochs,
                           verbose=1,
                           batch_size=self.batch_size,
                           validation_split=self.validation_split,
-                          shuffle=True,
-                          callbacks=self.callbacks)
+                          callbacks = self.callbacks,
+                          shuffle=True)
 
     def extract_features(self, X_test):
-        encoded = self.encoder_model.predict_on_batch(X_test)
-        # TODO post-process data
+        encoded = self.encoder_model.predict_on_batch(X_test)[0]
+        encoder_features = np.array([])
+        for i in range(0, X_test.shape[0]):
+            encoder_features = np.append(encoder_features, np.mean(encoded[i, :, :], axis=1))
+        return encoder_features.reshape(X_test.shape[0], self.nIn)
